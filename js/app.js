@@ -18,8 +18,10 @@ for (const button of onscreenKeyboardButtons) {
 //parameter of handleInteraction = e or e.key or something else
 for (const button of onscreenKeyboardButtons) {
     document.addEventListener('keydown', (e) => {
-        if (button.textContent === e.key) 
-        game.handleInteraction(button);
+        if (button.textContent === e.key && !button.disabled) {
+            game.handleInteraction(button);
+            console.log
+        }
     });
 }
 
